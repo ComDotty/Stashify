@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stashify.MainPage"
+             Title="Stashify V1.0 (Development)" BackgroundColor="#191820">
+
+    <ScrollView>
+        <VerticalStackLayout
+                Spacing="30"
+                Padding="30,0"
+                VerticalOptions="Center">
+            <Label
+                Text="Stashify V1.0"
+                FontSize="Large"
+                FontAttributes="Bold"
+                TextColor="White"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            <Label
+                Text="Stash management for the hobbyist"
+                FontSize="Medium"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            <Label
+                Text="Take your stash with you anywhere. Kits, accessories, aftermarket,&#x0a;tools, paints and more. Everything in one place on any device!"
+                FontSize="Micro"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+            <Button
+                x:Name="LoginBtn"
+                Text="Login"
+                Clicked="LoginBtnClicked"
+                FontSize="Small"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
