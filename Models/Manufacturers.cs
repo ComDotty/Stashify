@@ -11,16 +11,19 @@ namespace Stashify.Models
 
         [MapTo("name")]
         [Required]
-        public required string name { get; set; }
+        public required string ManufacturerName { get; set; }
 
-        [MapTo("website_url")]
-        public string? website_url { get; set; }
+        [MapTo("websiteurl")]
+        public string? ManufacturerWebsiteURL { get; set; }
 
-        [MapTo("location")]
-        public string? location { get; set; }
+        [MapTo("address")]
+        public string? ManufacturerAddress { get; set; }
+
+        [MapTo("country")]
+        public string? ManufacturerCountry { get; set; }
 
         [MapTo("description")]
-        public string? description { get; set; }
+        public string? ManufacturerDescription { get; set; }
 
     }
 }

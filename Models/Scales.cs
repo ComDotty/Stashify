@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using Realms;
+
 namespace Stashify.Models
 {
     public class Scales : RealmObject
@@ -10,7 +11,7 @@ namespace Stashify.Models
 
         [MapTo("scale")]
         [Required]
-        public required string scale { get; set; }
+        public required string Scale { get; set; }
 
     }
 

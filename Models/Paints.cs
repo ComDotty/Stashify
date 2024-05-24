@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using Realms;
+
 namespace Stashify.Models
 {
     public class Paints : RealmObject

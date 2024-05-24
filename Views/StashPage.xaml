@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stashify.Views.StashPage"
+             Title="Stashify V1.0 - Stash">
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <Label Text="Stashify V1.0 - Stash"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   Margin="15"
+                   HorizontalTextAlignment="End"
+                   TextColor="DarkGreen"/>
+            <Label Text="Maintain the content of your stash. Changes are automatically synched to your database"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   Margin="15"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>            
+            <Button x:Name="ReturnBtn" Text="Home" Clicked="ReturnBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"/>
+            <Label Text="Stashify V1.0 (Initial Development)"
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   Margin="10"
+                   HorizontalTextAlignment="Start"
+                   TextColor="DarkGreen"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

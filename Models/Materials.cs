@@ -9,13 +9,13 @@ namespace Stashify.Models
         [MapTo("_Id")]
         public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
 
-        [MapTo("material_name")]
+        [MapTo("materialname")]
         [Required]
-        public required string material_name { get; set; }
+        public required string MaterialName { get; set; }
 
-        [MapTo("material_type")]
+        [MapTo("materialtype")]
         [Required]
-        public required string? material_type { get; set; }
+        public required string? MaterialType { get; set; }
 
     }
 }

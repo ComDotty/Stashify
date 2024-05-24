@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stashify.Views.ShoppingListPage"
+             Title="Stashify V1.0 - Shopping Lists">
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <Label Text="Stashify V1.0 - Shopping Lists"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   Margin="15"
+                   HorizontalTextAlignment="End"
+                   TextColor="DarkGreen"/>
+            <Label Text="Are you visiting a hobby show or retailer? Prepare shopping lists in advance"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   Margin="15"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>            
+            <Button x:Name="ReturnBtn" Text="Home" Clicked="ReturnBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"/>
+            <Label Text="Stashify V1.0 (Initial Development)"
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   Margin="10"
+                   HorizontalTextAlignment="Start"
+                   TextColor="DarkGreen"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

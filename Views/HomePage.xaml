@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stashify.Views.HomePage"
+             Title="Stashify V1.0 - Home">
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <Label Text="Stashify V1.0 - Home"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   Margin="15"
+                   HorizontalTextAlignment="End"
+                   TextColor="DarkGreen"/>
+            <Label Text="Stash management for the hobbyist"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   Margin="15"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>            
+            <Button Text="Your Stash" x:Name="StashPgBtn" Clicked="StashPgBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"></Button>
+            <Label Text="Maintain the content of your stash. Changes are automatically synched to your database" 
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   Padding="15" 
+                   HorizontalTextAlignment="Start" 
+                   HorizontalOptions="FillAndExpand" 
+                   BackgroundColor="PaleGoldenrod" 
+                   TextColor="Black"/>
+            <Button Text="Your Wants" x:Name="WantsPgBtn" Clicked="WantsPgBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"></Button>
+            <Label Text="Add multiple wants lists of items you need for different projects" 
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   Padding="15" 
+                   HorizontalTextAlignment="Start" 
+                   HorizontalOptions="FillAndExpand" 
+                   BackgroundColor="PaleGoldenrod" 
+                   TextColor="Black"/>
+            <Button Text="Your Wishlists" x:Name="WishListPgBtn" Clicked="WishListPgBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"></Button>
+            <Label Text="Create wishlists to track new and recent releases which you would like to add to your stash" 
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   Padding="15" 
+                   HorizontalTextAlignment="Start" 
+                   HorizontalOptions="FillAndExpand" 
+                   BackgroundColor="PaleGoldenrod" 
+                   TextColor="Black"/>
+            <Button Text="Your Shopping Lists" x:Name="ShoppingListPgBtn" Clicked="ShoppingListPgBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"></Button>
+            <Label Text="Are you visiting a hobby show or retailer? Prepare shopping lists in advance" 
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   Padding="15" 
+                   HorizontalTextAlignment="Start" 
+                   HorizontalOptions="FillAndExpand" 
+                   BackgroundColor="PaleGoldenrod" 
+                   TextColor="Black"/>
+            <Button Text="Your Account" x:Name="AccountPgBtn" Clicked="AccountPgBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"></Button>
+            <Label Text="Manage your Stashify account. Update your profile and control your subscription" 
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   Padding="15" 
+                   HorizontalTextAlignment="Start" 
+                   HorizontalOptions="FillAndExpand" 
+                   BackgroundColor="PaleGoldenrod" 
+                   TextColor="Black"/>
+            <Button Text="Logout" x:Name="LogoutBtn" Clicked="LogoutBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"></Button>
+            <Label Text="Logout of the Stashify app." 
+                   FontSize="16" 
+                   FontAttributes="Bold" 
+                   Padding="15" 
+                   HorizontalTextAlignment="Start" 
+                   HorizontalOptions="FillAndExpand" 
+                   BackgroundColor="PaleGoldenrod" 
+                   TextColor="Black"/>
+            <Label Text="Stashify V1.0 (Initial Development)"
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   Margin="10"
+                   HorizontalTextAlignment="Start"
+                   TextColor="DarkGreen"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

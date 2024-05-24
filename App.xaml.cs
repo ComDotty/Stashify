@@ -1,4 +1,6 @@
-﻿namespace Stashify
+﻿using Stashify.Views.Secure;
+
+namespace Stashify
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new WelcomePage();
         }
     }
 }
