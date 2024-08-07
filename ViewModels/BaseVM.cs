@@ -1,15 +1,16 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Stashify.ViewModels
 {
-    public partial class BaseVM : ObservableObject
+    public class BaseVM : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        bool isBusy;
-
-        public bool IsNotBusy => !IsBusy;
-
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        
     }
 }

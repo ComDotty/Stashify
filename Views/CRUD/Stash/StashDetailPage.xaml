@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false"            
+             xmlns:customControls="clr-namespace:Stashify.Views.Controls"             
+             x:Class="Stashify.Views.CRUD.Stash.StashDetailPage"
+             BackgroundColor="DarkGreen"
+             Title="Stashify V1.0 - Stash Detail Page"
+             x:Name="stashDetailPage">
+
+    <ScrollView
+        HorizontalOptions="Center">
+        <Grid RowDefinitions="1*, 1*, *, Auto"
+              IgnoreSafeArea="{OnPlatform Android=False, iOS=True}">
+        <Label 
+            Grid.Row="0"
+            Padding="0, 15, 0, 0"
+            Text="{Binding ProductManufacturer}"
+            FontAttributes="Bold"
+            FontSize="28"
+            TextColor="White"
+            HorizontalOptions="Center" />
+        <Label 
+            Grid.Row="1"
+            Padding="0, 0, 0, 15"
+            Text="{Binding ProductName}"
+            FontAttributes="Bold"
+            FontSize="22"
+            TextColor="White"
+            HorizontalTextAlignment="Center" />
+        <Border   
+            Grid.Row="2"
+            StrokeShape="RoundRectangle 10"
+            Stroke="LightGreen"
+            StrokeThickness="1"
+            BackgroundColor="White"
+            Margin="0, 5, 0, 10"
+            WidthRequest="370"
+            HorizontalOptions="Center"
+            VerticalOptions="Fill">
+            <StackLayout Padding="0, 0, 0, 50">
+                <Grid ColumnDefinitions="1*" RowDefinitions="Auto, 1*">
+                    <Image Source="{Binding ProductImage}" 
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Margin="0,0,0,15"/>
+                        <Grid Row="1" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" BackgroundColor="white">
+                        <Label Text="{Binding ProductScale, StringFormat='Scale: {0}'}" 
+                           Grid.Row="2"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0"/>
+                        <Label Text="{Binding ProductCode, StringFormat='Mfr. Code: {0}'}" 
+                           Grid.Row="3"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Text="{Binding ProductAvailability, StringFormat='Availability: {0}'}" 
+                           Grid.Row="4"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Text="{Binding DatePurchased, StringFormat='Date Purchased: {0}'}" 
+                           Grid.Row="5"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Text="{Binding PriceValue, StringFormat='Price/Value: {0}'}" 
+                           Grid.Row="6"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Text="{Binding WherePurchased, StringFormat='Supplier: {0}'}" 
+                           Grid.Row="7"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Text="{Binding ProductQuantity, StringFormat='Quantity: {0}'}" 
+                           Grid.Row="9"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Text="{Binding ProductMaterial, StringFormat='Material(s): {0}'}" 
+                           Grid.Row="8"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Text="{Binding ProductDescription, StringFormat='Description: {0}'}" 
+                           Grid.Row="10"                           
+                           FontSize="18"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           Padding="15, 5, 10, 0" />
+                        <Label Grid.Row="11"
+                            Text="Tap to Return" 
+                            HorizontalOptions="End" 
+                            FontSize="16" 
+                            FontAttributes="Bold" 
+                            TextColor="DarkGreen" 
+                            Padding="15, 15, 10, 0"/>
+                        </Grid>
+                </Grid>
+           </StackLayout>
+        </Border>
+
+        <StackLayout Grid.Row="3">
+            <!-- Footer - Custom Control -->
+            <customControls:FooterControl x:Name="footerControl"/>
+        </StackLayout>
+            
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnPageTapped"/>
+        </Grid.GestureRecognizers>
+            
+        </Grid>
+        
+    </ScrollView>
+</ContentPage>

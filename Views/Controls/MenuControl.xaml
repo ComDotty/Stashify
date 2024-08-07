@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stashify.Views.Controls.MenuControl"
+             x:Name="menuControl">
+    
+    <!-- Menu - Custom Control -->
+    <ContentView.Content>
+        <Grid
+         x:Name="MenuControlGrid"
+         IgnoreSafeArea="{OnPlatform Android=False, iOS=True}"
+         BackgroundColor="Green">
+
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="LightGreen" Offset="0.1" />
+                    <GradientStop Color="Green" Offset="0.6" />
+                    <GradientStop Color="DarkGreen" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="MenuGrid_Tap" />
+            </Grid.GestureRecognizers>
+
+            <VerticalStackLayout
+             Margin="0,15,10,0"
+             HorizontalOptions="End"
+             Spacing="0">
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Home"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="HomePage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource home}" 
+                                FontFamily="FA6Solid"
+                                Color="White"
+                                Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Your Stash"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="StashPage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource stash}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Your Wishlist"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="WishListPage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource wish}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Your Shopping Lists"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="ShoppingListPage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource shopping}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>   
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Settings"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="SettingsPage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource settings}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Account"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="AccountPage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource account}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Help"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="HelpPage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource help}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="About"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="AboutPage">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource about}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+                <Button
+                 BackgroundColor="Transparent"
+                 Text="Logout"
+                 TextColor="White"
+                 ContentLayout="Right, 10"
+                 FontAttributes="Bold"
+                 Margin="5"
+                 FontSize="18"
+                 Padding="0"
+                 HorizontalOptions="End"
+                 Clicked="OnBtnClick" ClassId="Logout">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{StaticResource logout}" 
+                                  FontFamily="FA6Solid"
+                                  Color="White"
+                                  Size="18"/>
+                    </Button.ImageSource>
+                </Button>
+        </VerticalStackLayout>
+        
+        </Grid>
+    </ContentView.Content>
+</ContentView>

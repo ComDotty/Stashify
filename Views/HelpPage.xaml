@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false"      
+             xmlns:customControls="clr-namespace:Stashify.Views.Controls"
+             x:Class="Stashify.Views.HelpPage"
+             BackgroundColor="DarkGreen"
+             Title="Stashify V1.0 - Help"             
+             x:Name="helpPage">
+
+    <ScrollView>
+        <Grid
+            IgnoreSafeArea="{OnPlatform Android=False, iOS=True}">
+
+            <!-- Menu - Custom Control -->
+            <customControls:MenuControl x:Name="menuControl" 
+                MainContentGrid="{x:Reference MainContentGrid}"
+                ParentPage="{x:Reference helpPage}"/>
+
+            <!-- Main Content Grid -->
+            <Grid         
+                x:Name="MainContentGrid"
+                BackgroundColor="DarkGreen">
+
+                <Grid RowDefinitions="Auto, Auto, *, Auto">
+
+                    <StackLayout Grid.Row="0">
+                        <Grid Margin="0, 0, 0, 10" RowDefinitions="1*" ColumnDefinitions="2*" BackgroundColor="{StaticResource Gray600}">
+                            <Button
+                                BackgroundColor="White"
+                                Text=""
+                                TextColor="Transparent"
+                                ContentLayout="Right, 10"
+                                FontAttributes="Bold"
+                                Margin="15"
+                                FontSize="20"
+                                Padding="0"
+                                HorizontalOptions="End"
+                                Clicked="MenuBtn_Click">
+                                <Button.ImageSource>
+                                    <FontImageSource Glyph="{StaticResource menu}" 
+                                    FontFamily="FA6Solid"
+                                    Color="DarkGreen"
+                                    Size="20"/>
+                                </Button.ImageSource>
+                            </Button>
+                            <Label Text="Help"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Margin="15"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start"
+                                TextColor="White"/>
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1">
+                        <Label Text="FAQ, help forum and support"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            Margin="10"
+                            TextColor="White"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <Border Grid.Row="2"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="DarkGreen"
+                        StrokeThickness="1"
+                        BackgroundColor="White"
+                        HeightRequest="600"
+                        WidthRequest="370"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Fill">
+                        <StackLayout Padding="10">
+                            <Label Text="FAQ"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="DarkGreen"/>
+                            <Label Text="https://www.stashify.com/faq"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                            <BoxView Color="DarkGreen"
+                                Margin="6"    
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+                            <Label Text="User Forum"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="DarkGreen"/>
+                            <Label Text="https://www.stashify.com/forum"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                            <BoxView Color="DarkGreen"
+                                Margin="6"    
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+                            <Label Text="Website"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="DarkGreen"/>
+                            <Label Text="https://www.stashify.com/support"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                            <BoxView Color="DarkGreen"
+                                Margin="6"    
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+                            <Label Text="E-Mail"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="DarkGreen"/>
+                            <Label Text="support@stashify.com"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        </StackLayout>
+                    </Border>
+
+                    <StackLayout Grid.Row="3">
+                        <!-- Footer - Custom Control -->
+                        <customControls:FooterControl x:Name="footerControl"/>
+                    </StackLayout>
+
+
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>    

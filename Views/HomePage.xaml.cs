@@ -1,39 +1,75 @@
+using System.Windows.Input;
+using Microsoft.Maui.Controls;
+using Stashify.Models;
+using Stashify.ViewModels;
+
 namespace Stashify.Views;
 
 public partial class HomePage : ContentPage
 {
+    private readonly HomePageVM? _viewModel;	
+    private const uint AnimationDuration = 800u;
+
 	public HomePage()
 	{
-        InitializeComponent();
-	}
+		InitializeComponent();
 
-	private async void StashPgBtn_Click(object sender, EventArgs e)
-	{
-		await Navigation.PushModalAsync(new StashPage());
-	}
+        // Assign the viewmodel binding context
+        _viewModel = App.Current.Services.GetRequiredService<HomePageVM>();
+        BindingContext = _viewModel;
+    }
 
-	private async void WantsPgBtn_Click(object sender, EventArgs e)
-	{
-		await Navigation.PushModalAsync(new WantsPage());
-	}
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
 
-	private async void WishListPgBtn_Click(object sender, EventArgs e)
-	{
-		await Navigation.PushModalAsync(new WishListPage());
-	}
+        // Ensure ViewModel is not null and load data
+        _viewModel?.LoadData();
+    }
+    private void MenuBtn_Click(object sender, EventArgs e)
+    {
+        //Display the menu and move the MainContentGrid out of the view
+        _ = MainContentGrid.FadeTo(0.8, AnimationDuration);
+        _ = MainContentGrid.TranslateTo(-400, 0, AnimationDuration, Easing.CubicInOut);
+    }
 
-	private async void ShoppingListPgBtn_Click(object sender, EventArgs e)
-	{
-		await Navigation.PushModalAsync(new ShoppingListPage());
-	}
+    private async void PageColletionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (HomePageCollectionView.SelectedItem != null)
+        {
+            Home selItem = (Home)HomePageCollectionView.SelectedItem;
+            var pgId = selItem.SectionId;
 
-	private async void AccountPgBtn_Click(object sender, EventArgs e)
-	{
-		await Navigation.PushModalAsync(new Secure.AccountPage());
-	}
+            Page? newPage = null;
 
-	private async void LogoutBtn_Click(object sender, EventArgs e)
-	{
-		await Navigation.PushModalAsync(new Secure.WelcomePage());
-	}
+            switch (pgId)
+            {
+
+                case 1:
+                    newPage = new StashPage();
+                    break;
+
+                case 2:
+                    newPage = new WishListPage();
+                    break;
+
+                case 3:
+                    newPage = new ShoppingListPage();
+                    break;
+
+                default:
+                    break;
+            }
+               
+        if (newPage != null)
+        {
+
+            await Dispatcher.DispatchAsync(async () =>
+                {
+                    await Navigation.PushAsync(newPage, true);
+                });
+            
+            }
+        }
+    }
 }

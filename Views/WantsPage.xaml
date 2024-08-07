@@ -1,31 +1,85 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false"      
+             xmlns:customControls="clr-namespace:Stashify.Views.Controls"
+             xmlns:viewModels="clr-namespace:Stashify.ViewModels"
              x:Class="Stashify.Views.WantsPage"
-             Title="Stashify V1.0 - Wants">
-    <ScrollView Orientation="Vertical">
-        <VerticalStackLayout Padding="10" Spacing="10">
-            <Label Text="Stashify V1.0 - Wants"
-                   FontSize="28"
-                   FontAttributes="Bold"
-                   Margin="15"
-                   HorizontalTextAlignment="End"
-                   TextColor="DarkGreen"/>
-            <Label Text="Add multiple wants lists of items you need for different projects"
-                   FontSize="22"
-                   FontAttributes="Bold"
-                   Margin="15"
-                   TextColor="Black"
-                   HorizontalTextAlignment="Center"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"/>            
-            <Button x:Name="ReturnBtn" Text="Home" Clicked="ReturnBtn_Click" BackgroundColor="DarkGreen" FontSize="18" FontAttributes="Bold"/>
-            <Label Text="Stashify V1.0 (Initial Development)"
-                   FontSize="15"
-                   FontAttributes="Bold"
-                   Margin="10"
-                   HorizontalTextAlignment="Start"
-                   TextColor="DarkGreen"/>
-        </VerticalStackLayout>
+             BackgroundColor="DarkGreen"
+             Title="Stashify V1.0 - Wants"
+             x:Name="wantsPage">
+
+            <ContentPage.BindingContext>
+                <viewModels:WantsPageVM/>
+            </ContentPage.BindingContext>
+    
+    <ScrollView>
+        <Grid
+            IgnoreSafeArea="{OnPlatform Android=False, iOS=True}">
+
+            <!-- Menu - Custom Control -->
+            <customControls:MenuControl x:Name="menuControl" 
+                MainContentGrid="{x:Reference MainContentGrid}"
+                ParentPage="{x:Reference wantsPage}"/>
+
+            <!-- Main Content Grid -->
+            <Grid         
+                x:Name="MainContentGrid"
+                BackgroundColor="DarkGreen">
+
+                <Grid RowDefinitions="Auto, *, Auto">
+
+                    <StackLayout Grid.Row="0">
+                        <Grid Margin="0, 0, 0, 10" RowDefinitions="1*" ColumnDefinitions="2*" BackgroundColor="{StaticResource Gray600}">
+                            <Button
+                                BackgroundColor="White"
+                                Text=""
+                                TextColor="Transparent"
+                                ContentLayout="Right, 10"
+                                FontAttributes="Bold"
+                                Margin="15"
+                                FontSize="20"
+                                Padding="0"
+                                HorizontalOptions="End"
+                                Clicked="MenuBtn_Click">
+                                <Button.ImageSource>
+                                    <FontImageSource Glyph="{StaticResource menu}" 
+                                    FontFamily="FA6Solid"
+                                    Color="DarkGreen"
+                                    Size="20"/>
+                                </Button.ImageSource>
+                            </Button>
+                            <Label Text="Your Wants"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Margin="15"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Start"
+                                TextColor="White"/>
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1">
+                        <Label Text="List items you need for your projects"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            Margin="10"
+                            TextColor="White"
+                            HorizontalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2">
+                        <!-- Footer - Custom Control -->
+                        <customControls:FooterControl x:Name="footerControl"/>
+                    </StackLayout>
+
+                </Grid>
+
+            </Grid>
+        </Grid>
     </ScrollView>
 </ContentPage>

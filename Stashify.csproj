@@ -24,7 +24,7 @@
 		<ApplicationTitle>Stashify</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.stashify</ApplicationId>
+		<ApplicationId>com.comdottywebservices.stashify</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -39,13 +39,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<!-- Custom app icon for Stashify V1.0 -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="DarkGreen" />
 
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<!-- Custom splash screen for Stashify V1.0 -->
+    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="DarkGreen" BaseSize="128,128" />
 
-		<!-- Images -->
+    <!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
 		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
 
@@ -68,6 +68,8 @@
 	<ItemGroup>
 	  <Compile Remove="AppShell.xaml.cs" />
 	  <Compile Remove="MainPage.xaml.cs" />
+	  <Compile Remove="Models\Trades.cs" />
+	  <Compile Remove="ViewModels\TradesListPageVM.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -76,24 +78,69 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-		<PackageReference Include="Realm" Version="12.0.0" />
+	  <None Remove="Resources\AppIcon\appiconfg.svg" />
+	  <None Remove="Resources\HomeImages\event.jpg" />
+	  <None Remove="Resources\HomeImages\shoppinglist.jpg" />
+	  <None Remove="Resources\HomeImages\stash.jpg" />
+	  <None Remove="Resources\HomeImages\wishlist.jpg" />
+	  <None Remove="Resources\StashImages\afvclub_centmk1.jpg" />
+	  <None Remove="Resources\StashImages\border_crusader.jpg" />
+	  <None Remove="Resources\StashImages\gecko_a9cruiser.jpg" />
+	  <None Remove="Resources\StashImages\italeri_crusaderaamk3.jpg" />
+	  <None Remove="Resources\StashImages\italeri_crusadermk1.jpg" />
+	  <None Remove="Resources\StashImages\mirror_morrisquadC8.jpg" />
+	  <None Remove="Resources\StashImages\tamiya_challenger2desertised.jpg" />
+	  <None Remove="Resources\StashImages\tamiya_churchillcrocVII.jpg" />
+	  <None Remove="Resources\StashImages\tamiya_cromwell48.jpg" />
+	  <None Remove="Resources\StashImages\tamiya_crusaderIII.jpg" />
+	  <None Remove="Resources\StashImages\tamiya_matilda.jpg" />
+	  <None Remove="Resources\StashImages\trumpeter_as90.jpg" />
+	  <None Remove="Resources\StashImages\trumpeter_m270.jpg" />
+	  <None Remove="Resources\StashImages\vulcan_vickersmkvi.jpg" />
+	  <None Remove="Resources\WishListImages\ahhq_m10achilles.jpg" />
+	  <None Remove="Resources\WishListImages\gecko_ucmk2.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Realm" Version="12.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\HomePage.xaml.cs">
+	    <DependentUpon>HomePage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\Secure\LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\Secure\WelcomePage.xaml.cs">
-	    <DependentUpon>WelcomePage.xaml</DependentUpon>
+	  <Compile Update="Views\BuySellTradePage.xaml.cs">
+	    <DependentUpon>BuySellTradePage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Secure\AccountPage.xaml">
+	  <MauiXaml Update="Views\AboutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\AccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\FooterControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Controls\MenuControl.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CRUD\Stash\StashDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\CRUD\WishList\WishListDetailPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\HelpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\HomePage.xaml">
@@ -102,7 +149,7 @@
 	  <MauiXaml Update="Views\Secure\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Secure\WelcomePage.xaml">
+	  <MauiXaml Update="Views\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\ShoppingListPage.xaml">
@@ -111,12 +158,45 @@
 	  <MauiXaml Update="Views\StashPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\BuySellTradePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\WantsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\WishListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Views\CRUD\Account\" />
+	  <Folder Include="Views\CRUD\ShoppingList\" />
+	  <Folder Include="Views\CRUD\Settings\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\AppIcon\appiconfg.svg" />
+	  <MauiImage Include="Resources\HomeImages\event.jpg" />
+	  <MauiImage Include="Resources\HomeImages\shoppinglist.jpg" />
+	  <MauiImage Include="Resources\HomeImages\stash.jpg" />
+	  <MauiImage Include="Resources\HomeImages\wishlist.jpg" />
+	  <MauiImage Include="Resources\StashImages\afvclub_centmk1.jpg" />
+	  <MauiImage Include="Resources\StashImages\border_crusader.jpg" />
+	  <MauiImage Include="Resources\StashImages\gecko_a9cruiser.jpg" />
+	  <MauiImage Include="Resources\StashImages\italeri_crusaderaamk3.jpg" />
+	  <MauiImage Include="Resources\StashImages\italeri_crusadermk1.jpg" />
+	  <MauiImage Include="Resources\StashImages\mirror_morrisquadc8.jpg" />
+	  <MauiImage Include="Resources\StashImages\tamiya_challenger2desertised.jpg" />
+	  <MauiImage Include="Resources\StashImages\tamiya_churchillcrocvii.jpg" />
+	  <MauiImage Include="Resources\StashImages\tamiya_cromwell48.jpg" />
+	  <MauiImage Include="Resources\StashImages\tamiya_crusaderiii.jpg" />
+	  <MauiImage Include="Resources\StashImages\tamiya_matilda.jpg" />
+	  <MauiImage Include="Resources\StashImages\trumpeter_as90.jpg" />
+	  <MauiImage Include="Resources\StashImages\trumpeter_m270.jpg" />
+	  <MauiImage Include="Resources\StashImages\vulcan_vickersmkvi.jpg" />
+	  <MauiImage Include="Resources\WishListImages\ahhq_m10achilles.jpg" />
+	  <MauiImage Include="Resources\WishListImages\gecko_ucmk2.jpg" />
 	</ItemGroup>
   
 

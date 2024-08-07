@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="false"      
+             xmlns:customControls="clr-namespace:Stashify.Views.Controls"
+             x:Class="Stashify.Views.AboutPage"
+             BackgroundColor="DarkGreen"
+             Title="Stashify V1.0 - About"             
+             x:Name="aboutPage">
+
+    <Grid
+        IgnoreSafeArea="{OnPlatform Android=False, iOS=True}">
+
+        <!-- Menu - Custom Control -->
+        <customControls:MenuControl x:Name="menuControl" 
+            MainContentGrid="{x:Reference MainContentGrid}"
+            ParentPage="{x:Reference aboutPage}"/>
+
+        <!-- Main Content Grid -->
+        <Grid         
+            x:Name="MainContentGrid"
+            BackgroundColor="DarkGreen">
+
+            <Grid RowDefinitions="Auto, Auto, *, Auto">
+
+                <StackLayout Grid.Row="0">
+                    <Grid Margin="0, 0, 0, 10" RowDefinitions="1*" ColumnDefinitions="2*" BackgroundColor="{StaticResource Gray600}">
+                        <Button
+                            BackgroundColor="White"
+                            Text=""
+                            TextColor="Transparent"
+                            ContentLayout="Right, 10"
+                            FontAttributes="Bold"
+                            Margin="15"
+                            FontSize="20"
+                            Padding="0"
+                            HorizontalOptions="End"
+                            Clicked="MenuBtn_Click">
+                            <Button.ImageSource>
+                                <FontImageSource Glyph="{StaticResource menu}" 
+                                FontFamily="FA6Solid"
+                                Color="DarkGreen"
+                                Size="20"/>
+                            </Button.ImageSource>
+                        </Button>
+                        <Label Text="About"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            Margin="15"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Start"
+                            TextColor="White"/>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1">
+                    <Label Text="Stashify V1.0"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        Margin="10"
+                        HorizontalTextAlignment="Center"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        TextColor="White"/>
+                </StackLayout>
+
+                <Border Grid.Row="2"
+                        StrokeShape="RoundRectangle 10"
+                        Stroke="DarkGreen"
+                        StrokeThickness="1"
+                        BackgroundColor="White"
+                        HeightRequest="600"
+                        WidthRequest="370"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Fill">
+                    <StackLayout Padding="10">
+                        <Label Text="Current Version"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="darkgreen"/>
+                        <Label Text="Version 1.0.0"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <Label Text="Minor Build - 17.6.0"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <BoxView Color="DarkGreen"
+                                Margin="6"    
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+                        <Label Text="Status"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="DarkGreen"/>
+                        <Label Text=" - UI Development"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <Label Text=" - Latest Update - 17/06/2024"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <BoxView Color="DarkGreen"
+                                Margin="6"    
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+                        <Label Text="Social Media"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="DarkGreen"/>
+                        <Label Text="https://www.facebook.com/stashify"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <Label Text="https://www.instagram.com/stashify"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <Label Text="https://www.x.com/stashify"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <Label Text="https://www.tiktok.com/stashify"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                        <BoxView Color="DarkGreen"
+                                Margin="6"    
+                                HeightRequest="1"
+                                HorizontalOptions="Fill" />
+                        <Label Text="Copyright"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                Padding="0,10,0,0"
+                                HorizontalTextAlignment="Start"
+                                TextColor="DarkGreen"/>
+                        <Label Text="&#x00A9; ComDotty Web Services - 2024"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                Padding="10,10,0,20"
+                                HorizontalTextAlignment="Start"
+                                TextColor="black"/>
+                    </StackLayout>
+                </Border>
+
+                <StackLayout Grid.Row="3">
+                    <!-- Footer - Custom Control -->
+                    <customControls:FooterControl x:Name="footerControl"/>
+                </StackLayout>
+
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</ContentPage>    

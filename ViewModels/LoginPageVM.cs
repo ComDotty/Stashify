@@ -1,6 +1,7 @@
 ﻿namespace Stashify.ViewModels
 {
-    internal class LoginPageVM
+    public class LoginPageVM : BaseVM
     {
+
     }
 }

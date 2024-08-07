@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Stashify.Views.Controls.FooterControl">
+
+    <Grid  BackgroundColor="{StaticResource Gray600}">
+        <Label Text="Stashify V1.0 (Android)"
+            FontSize="15"
+            FontAttributes="Bold"
+            Padding="0, 10, 15, 10"
+            HorizontalTextAlignment="End"
+            TextColor="White"/>
+    </Grid>
+    
+</ContentView>

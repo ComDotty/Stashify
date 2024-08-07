@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Menu Icons -->
+    <x:String x:Key="menu">&#xf0c9;</x:String>
+    <x:String x:Key="home">&#xf015;</x:String>
+    <x:String x:Key="settings">&#xf013;</x:String>
+    <x:String x:Key="account">&#xf007;</x:String>
+    <x:String x:Key="stash">&#xf1b3;</x:String>
+    <x:String x:Key="wish">&#xe2ca;</x:String>
+    <x:String x:Key="want">&#xf61f;</x:String>
+    <x:String x:Key="shopping">&#xf291;</x:String>
+    <x:String x:Key="trading">&#xf466;</x:String>
+    <x:String x:Key="help">&#xf059;</x:String>
+    <x:String x:Key="about">&#xf05a;</x:String>
+    <x:String x:Key="logout">&#xf2f5;</x:String>
+
+    <!-- Record Icons -->
+    <x:String x:Key="add">&#xf0fe;</x:String>
+    <x:String x:Key="filter">&#xf0b0;</x:String>
+    <x:String x:Key="count">&#xf0cb;</x:String>
+    <x:String x:Key="edit">&#xf31c;</x:String>
+    <x:String x:Key="trash">&#xf2ed;</x:String>
+
+</ResourceDictionary>
